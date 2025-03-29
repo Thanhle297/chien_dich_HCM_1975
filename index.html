@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chiến dịch Hồ Chí Minh</title>
+    <link rel="stylesheet" href="./Asset/CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="./Asset/IMG/favicon.ico">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="map"></div>
+      <!-- <div id="mini-map"></div> -->
+    </div>
+    <button id="resetNorthBtn">
+      <i class="fa-solid fa-house"></i>
+    </button>
+    <div id="map-en"></div>
+
+    <button id="getCoordsBtn">Lấy tọa độ</button>
+    <p id="coordsDisplay">Chọn một điểm trên bản đồ.</p>
+
+    <script>
+      // Xử lý sự kiện nhấn nút để lấy tọa độ
+      document.getElementById("getCoordsBtn").addEventListener("click", () => {
+        map.once("click", (e) => {
+          const lng = e.lngLat.lng.toFixed(6);
+          const lat = e.lngLat.lat.toFixed(6);
+          document.getElementById(
+            "coordsDisplay"
+          ).textContent = `Tọa độ: ${lng}, ${lat}`;
+        });
+      });
+    </script>
+
+    <script src="./Asset/JS/index.js"></script>
+    <script src="./Asset/JS/popup.js"></script>
+  </body>
+</html>

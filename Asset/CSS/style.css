@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  width: 100%;
+  height: 100vh;
+}
+
+#mini-map {
+  width: 150px;
+  height: 200px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: 2px solid black;
+}
+
+#resetNorthBtn {
+  position: absolute;
+  top: 1%;
+  left: -50%;
+  transform: translate(10px);
+  padding: 10px 20px;
+  /* background-color: blue; */
+  /* color: red; */
+  border: none;
+  border-radius: 70px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 999;
+  &:hover {
+    background-color: rgba(8, 8, 200, 0.29);
+  }
+}
+
+.custom-marker {
+  position: absolute;
+  pointer-events: none; /* Không chặn sự kiện chuột */
+}
+
+.mapboxgl-popup-content {
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-position: 50% center;
+  background-image: url(https://cdn.glitch.global/90845d8e-81a9-424d-b13a-0acd2c0b3b63/4b65a8b55dcdf3ee10db8703ec2b3be6.jpg?v=1700156070316) !important;
+  padding: 20px 20px 15px !important;
+  max-width: 250px;
+  min-width: 150px;
+  border-radius: 5% !important;
+  
+}
+
+.content{
+  font-size: 110%;
+  margin: .1vh .5vw .3vh;
+  overflow: auto;
+  max-height: 14vh;
+  text-wrap: auto;
+}
+
+.content::-webkit-scrollbar {
+  width: 5px; /* Độ rộng của thanh cuộn */
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: #a88527; /* Màu của phần kéo */
+  border-radius: 4px; /* Bo tròn góc */
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Màu khi di chuột vào */
+}
+
+.content::-webkit-scrollbar-track {
+  background-color: #e1dcd0; /* Màu nền của thanh cuộn */
+  border-radius: 4px;
+}
+
+.content_2{
+  font-size: 110%;
+  margin: .1vh .5vw .3vh;
+  overflow: auto;
+  max-height: 14vh;
+  text-wrap: auto;
+  padding: 5px;
+}
+
+.content_2::-webkit-scrollbar {
+  width: 5px; /* Độ rộng của thanh cuộn */
+}
+
+.content_2::-webkit-scrollbar-thumb {
+  background-color: #a88527; /* Màu của phần kéo */
+  border-radius: 4px; /* Bo tròn góc */
+}
+
+.content_2::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Màu khi di chuột vào */
+}
+
+.content_2::-webkit-scrollbar-track {
+  background-color: #e1dcd0; /* Màu nền của thanh cuộn */
+  border-radius: 4px;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+}
+p{
+  font-size: 100%;
+  margin: 2% auto;
+}
+button {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  /* margin: 0 auto; */
+  padding: 0.5%;
+}
+
+.mapboxgl-popup-close-button {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  color: black;
+  /* background-color: $background-color_3; */
+  border-radius: 50% !important;
+  top: 0px !important; 
+  right: -12px !important;
+  &:focus {
+    outline: none;
+  }
+}
