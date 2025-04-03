@@ -35,6 +35,24 @@
   }
 }
 
+#toggleButton {
+  position: absolute;
+  top: 8%;
+  left: -50%;
+  transform: translate(10px);
+  padding: 10px 20px;
+  /* background-color: blue; */
+  /* color: red; */
+  border: none;
+  border-radius: 70px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 999;
+  &:hover {
+    background-color: rgba(8, 8, 200, 0.29);
+  }
+}
+
 .custom-marker {
   position: absolute;
   pointer-events: none; /* Không chặn sự kiện chuột */
@@ -49,12 +67,11 @@
   max-width: 250px;
   min-width: 150px;
   border-radius: 5% !important;
-  
 }
 
-.content{
+.content {
   font-size: 110%;
-  margin: .1vh .5vw .3vh;
+  margin: 0.1vh 0.5vw 0.3vh;
   overflow: auto;
   max-height: 14vh;
   text-wrap: auto;
@@ -78,9 +95,9 @@
   border-radius: 4px;
 }
 
-.content_2{
+.content_2 {
   font-size: 110%;
-  margin: .1vh .5vw .3vh;
+  margin: 0.1vh 0.5vw 0.3vh;
   overflow: auto;
   max-height: 14vh;
   text-wrap: auto;
@@ -109,7 +126,7 @@ h3 {
   display: flex;
   justify-content: center;
 }
-p{
+p {
   font-size: 100%;
   margin: 2% auto;
 }
@@ -127,9 +144,13 @@ button {
   color: black;
   /* background-color: $background-color_3; */
   border-radius: 50% !important;
-  top: 0px !important; 
+  top: 0px !important;
   right: -12px !important;
   &:focus {
     outline: none;
   }
+}
+
+.hidden {
+  display: none;
 }
