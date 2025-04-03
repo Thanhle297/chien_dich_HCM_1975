@@ -24,8 +24,6 @@
     <button id="resetNorthBtn">
       <i class="fa-solid fa-house"></i>
     </button>
-<<<<<<< HEAD
-=======
     <button id="toggleButton"><i id="icon" class="fas fa-eye"></i></button>
 
     <script>
@@ -38,28 +36,28 @@
           isVisible = !isVisible;
           areMarkersVisible = !areMarkersVisible; // Đảo trạng thái hiển thị
 
-          // Kiểm tra nếu layer tồn tại
-          if (map.getLayer("map-location")) {
-            map.setLayoutProperty(
-              "map-location",
-              "visibility",
-              isVisible ? "visible" : "none"
-            );
-          }
-          if (map.getLayer("map-name")) {
-            map.setLayoutProperty(
-              "map-name",
-              "visibility",
-              isVisible ? "visible" : "none"
-            );
-          }
-          if (map.getLayer("saigon-image")) {
-            map.setLayoutProperty(
-              "saigon-image",
-              "visibility",
-              isVisible ? "visible" : "none"
-            );
-          }
+          // // Kiểm tra nếu layer tồn tại
+          // if (map.getLayer("map-location")) {
+          //   map.setLayoutProperty(
+          //     "map-location",
+          //     "visibility",
+          //     isVisible ? "visible" : "none"
+          //   );
+          // }
+          // if (map.getLayer("map-name")) {
+          //   map.setLayoutProperty(
+          //     "map-name",
+          //     "visibility",
+          //     isVisible ? "visible" : "none"
+          //   );
+          // }
+          // if (map.getLayer("saigon-image")) {
+          //   map.setLayoutProperty(
+          //     "saigon-image",
+          //     "visibility",
+          //     isVisible ? "visible" : "none"
+          //   );
+          // }
 
           // Ẩn/Hiện Marker nếu có
           if (markerObjects.length > 0) {
@@ -78,7 +76,6 @@
         });
     </script>
 
->>>>>>> 9c51b04 (update ver 3)
     <script src="./Asset/JS/index.js"></script>
     <script src="./Asset/JS/popup.js"></script>
   </body>
