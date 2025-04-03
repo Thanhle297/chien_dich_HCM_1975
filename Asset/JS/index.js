@@ -44,6 +44,7 @@ data = {
       },
       properties: {
         name: "Hà Tiên (1-5)",
+        date: "1-5",
       },
     },
     {
@@ -54,6 +55,7 @@ data = {
       },
       properties: {
         name: "Rạch Giá (1-5)",
+        date: "1-5",
       },
     },
     {
@@ -64,6 +66,7 @@ data = {
       },
       properties: {
         name: "Cà Mau (1-5)",
+        date: "1-5",
       },
     },
     {
@@ -74,6 +77,7 @@ data = {
       },
       properties: {
         name: "Cần Thơ (1-5)",
+        date: "1-5",
       },
     },
     {
@@ -84,6 +88,7 @@ data = {
       },
       properties: {
         name: "Châu Đốc (2-5)",
+        date: "2-5",
       },
     },
     {
@@ -94,6 +99,7 @@ data = {
       },
       properties: {
         name: "Cao Lãnh (1-5)",
+        date: "1-5",
       },
     },
     {
@@ -104,6 +110,7 @@ data = {
       },
       properties: {
         name: "Mộc Hóa (1-5)",
+        date: "1-5",
       },
     },
     {
@@ -114,6 +121,7 @@ data = {
       },
       properties: {
         name: "Vĩnh Long (1-5)",
+        date: "1-5",
       },
     },
     {
@@ -124,6 +132,7 @@ data = {
       },
       properties: {
         name: "Trà Vinh (1-5)",
+        date: "1-5",
       },
     },
     {
@@ -134,6 +143,7 @@ data = {
       },
       properties: {
         name: "Sóc Trăng (30-4)",
+        date: "30-4",
       },
     },
     {
@@ -144,6 +154,7 @@ data = {
       },
       properties: {
         name: "Bạc Liêu (30-4)",
+        date: "30-4",
       },
     },
     {
@@ -154,6 +165,7 @@ data = {
       },
       properties: {
         name: "Bến Tre (1-5)",
+        date: "1-5",
       },
     },
     {
@@ -164,6 +176,7 @@ data = {
       },
       properties: {
         name: "Mỹ Tho (1-5)",
+        date: "1-5",
       },
     },
     {
@@ -174,6 +187,7 @@ data = {
       },
       properties: {
         name: "Sài Gòn (30-4)",
+        date: "30-4",
       },
     },
     {
@@ -184,6 +198,7 @@ data = {
       },
       properties: {
         name: "Bà Rịa (29-4)",
+        date: "29-4",
       },
     },
     {
@@ -194,6 +209,7 @@ data = {
       },
       properties: {
         name: "Xuân Lộc (21-4)",
+        date: "21-4",
       },
     },
     {
@@ -204,6 +220,7 @@ data = {
       },
       properties: {
         name: "Tây Ninh (30-4)",
+        date: "30-4",
       },
     },
     {
@@ -274,6 +291,7 @@ data = {
       },
       properties: {
         name: "Phan Thiết (19-4)",
+        date: "19-4",
       },
     },
   ],
@@ -503,7 +521,7 @@ map.on("load", () => {
             <p class = "content">10 giờ 45 phút ngày 30-4, các đơn vị của Quân đoàn II, bằng xe tăng và pháo binh, tiến thẳng vào “Dinh Độc lập”, buộc Tổng thống Dương Văn Minh phải tuyên bố đầu hàng vô điều kiện.</br>
 11 giờ 30 phút cùng ngày, lá cờ cách mạng tung bay trên nóc Phủ Tổng thống chính quyền Sài Gòn, báo hiệu sự toàn thắng của chiến dịch.
 </p>
-            <button onclick="window.location.href='1.html'">Xem chi tiết</button>
+            <button class="other" onclick="window.location.href='1.html'">Xem chi tiết</button>
           `
           )
           .addTo(map);
@@ -636,4 +654,31 @@ map.on("load", () => {
 //   });
 // });
 
+map.on("click", "map-location", function (e) {
+  const properties = e.features[0].properties;
 
+  if (properties.date === "1-5") {
+    new mapboxgl.Popup()
+      .setLngLat(e.lngLat)
+      .setHTML(
+        `<h3>${properties.name}</h3>
+        <p class = "content">Cùng với đại quân ta tiến vào giải phóng Sài Gòn, lực lượng vũ trang và nhân dân các tỉnh còn lại ở Nam Bộ, theo đúng kế hoạch của Trung ương Cục và Bộ chỉ huy Miền, với phương châm “xã giải phóng xã, huyện giải phóng huyện, tỉnh giải phóng tỉnh” đã nhất tề đứng lên tiến công và nổi dậy chiếm các căn cứ, quận lị, tỉnh lị, bức đối phương phải nộp vũ khí đầu hàng. Đến ngày 2-5-1975, lực lượng vũ trang và bộ máy chính quyền của Dương Văn Minh ở Nam Bộ và trên khắp miền Nam nước ta đã tan rã hoàn toàn.</p>`
+      )
+      .addTo(map);
+  }
+});
+
+// Đổi con trỏ chuột khi di chuột qua điểm
+map.on("mouseenter", "map-location", function (e) {
+  const properties = e.features[0].properties; // Lấy thuộc tính của điểm
+
+  if (properties.date === "1-5") {
+    map.getCanvas().style.cursor = "pointer";
+  } else {
+    map.getCanvas().style.cursor = "";
+  }
+});
+
+map.on("mouseleave", "map-location", function () {
+  map.getCanvas().style.cursor = "";
+});

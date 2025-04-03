@@ -70,11 +70,12 @@
 }
 
 .content {
-  font-size: 110%;
-  margin: 0.1vh 0.5vw 0.3vh;
+  font-size: 105%;
+  margin: 0.2vh 0.5vw 0.3vh;
   overflow: auto;
   max-height: 14vh;
   text-wrap: auto;
+  padding: 1.5%;
 }
 
 .content::-webkit-scrollbar {
@@ -153,4 +154,9 @@ button {
 
 .hidden {
   display: none;
+}
+
+.other{
+  width: 100px;
+  border-radius:50px ;
 }
