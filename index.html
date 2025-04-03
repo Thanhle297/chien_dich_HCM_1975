@@ -13,7 +13,7 @@
       href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/x-icon" href="./Asset/IMG/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./Asset/IMG/favicon.ico" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
   </head>
   <body>
@@ -24,6 +24,61 @@
     <button id="resetNorthBtn">
       <i class="fa-solid fa-house"></i>
     </button>
+<<<<<<< HEAD
+=======
+    <button id="toggleButton"><i id="icon" class="fas fa-eye"></i></button>
+
+    <script>
+      let areMarkersVisible = true;
+      let isVisible = true;
+
+      document
+        .getElementById("toggleButton")
+        .addEventListener("click", function () {
+          isVisible = !isVisible;
+          areMarkersVisible = !areMarkersVisible; // Đảo trạng thái hiển thị
+
+          // Kiểm tra nếu layer tồn tại
+          if (map.getLayer("map-location")) {
+            map.setLayoutProperty(
+              "map-location",
+              "visibility",
+              isVisible ? "visible" : "none"
+            );
+          }
+          if (map.getLayer("map-name")) {
+            map.setLayoutProperty(
+              "map-name",
+              "visibility",
+              isVisible ? "visible" : "none"
+            );
+          }
+          if (map.getLayer("saigon-image")) {
+            map.setLayoutProperty(
+              "saigon-image",
+              "visibility",
+              isVisible ? "visible" : "none"
+            );
+          }
+
+          // Ẩn/Hiện Marker nếu có
+          if (markerObjects.length > 0) {
+            markerObjects.forEach((marker) => {
+              const markerElement = marker.getElement();
+              markerElement.style.display = areMarkersVisible
+                ? "block"
+                : "none";
+            });
+          }
+
+          // Đổi icon nút
+          const icon = document.getElementById("icon");
+          icon.classList.toggle("fa-eye");
+          icon.classList.toggle("fa-eye-slash");
+        });
+    </script>
+
+>>>>>>> 9c51b04 (update ver 3)
     <script src="./Asset/JS/index.js"></script>
     <script src="./Asset/JS/popup.js"></script>
   </body>

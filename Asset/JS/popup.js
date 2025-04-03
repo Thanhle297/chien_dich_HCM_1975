@@ -43,6 +43,36 @@ const markers = [
 ];
 
 // Khi bản đồ tải xong, thêm các marker vào
+// map.on("load", () => {
+//   markers.forEach((markerData) => {
+//     // Tạo div chứa ảnh
+//     const markerDiv = document.createElement("div");
+//     markerDiv.className = "custom-marker";
+
+//     // Tạo ảnh bên trong div
+//     const img = document.createElement("img");
+//     img.src =
+//       "https://map-hcmussh.github.io/chiendichhcm/static/media/red-arrow.23ea599922e5ec8de25b.gif";
+//     img.style.width = "50px";
+//     img.style.transform = `rotate(${markerData.rotation}deg)`;
+//     markerDiv.appendChild(img);
+
+//     // Tạo marker bằng MapboxGL (để nó có thể click)
+//     new mapboxgl.Marker(markerDiv)
+//       .setLngLat([markerData.lng, markerData.lat])
+//       .setPopup(
+//         new mapboxgl.Popup().setHTML(
+//           `<h3>${markerData.title}</h3><p class = "content_2">${markerData.description}</p>`
+//         )
+//       )
+//       .addTo(map);
+//       markerObjects.push(marker)
+//   });
+// });
+
+let markerObjects = [];
+
+// Khi bản đồ tải xong, thêm các marker vào
 map.on("load", () => {
   markers.forEach((markerData) => {
     // Tạo div chứa ảnh
@@ -58,13 +88,16 @@ map.on("load", () => {
     markerDiv.appendChild(img);
 
     // Tạo marker bằng MapboxGL (để nó có thể click)
-    new mapboxgl.Marker(markerDiv)
+    const marker = new mapboxgl.Marker(markerDiv)
       .setLngLat([markerData.lng, markerData.lat])
       .setPopup(
         new mapboxgl.Popup().setHTML(
-          `<h3>${markerData.title}</h3><p class = "content_2">${markerData.description}</p>`
+          `<h3>${markerData.title}</h3><p class="content_2">${markerData.description}</p>`
         )
       )
       .addTo(map);
+
+    // Lưu marker vào mảng để có thể ẩn/hiện sau này
+    markerObjects.push(marker);
   });
 });

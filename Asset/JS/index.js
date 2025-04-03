@@ -617,3 +617,23 @@ map.on("load", () => {
   // map.on("load", updateImagePositions);
   // map.on("move", updateImagePositions);
 });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const button = document.getElementById("toggleButton");
+//   const content = document.getElementById("map");
+//   const icon = document.getElementById("icon");
+
+//   button.addEventListener("click", function () {
+//     if (content.classList.contains("hidden")) {
+//       content.classList.remove("hidden");
+//       icon.classList.replace("fa-eye-slash", "fa-eye");
+//       button.innerHTML = '<i id="icon" class="fas fa-eye"></i>';
+//     } else {
+//       content.classList.add("hidden");
+//       icon.classList.replace("fa-eye", "fa-eye-slash");
+//       button.innerHTML = '<i id="icon" class="fas fa-eye-slash"></i>';
+//     }
+//   });
+// });
+
+
