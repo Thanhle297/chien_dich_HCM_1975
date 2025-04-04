@@ -3,8 +3,8 @@ mapboxgl.accessToken =
 // mapboxgl.accessToken = 'pk.eyJ1IjoidGhhbmhsZTA0IiwiYSI6ImNtN2YyOXg1eTBqeWsya29lbGpkODJwYjIifQ.Hvx-Dl8T8M3JSnnT06Fgsg';
 
 const vietnamBounds = [
-  [102.14441, 8.17966], // Góc dưới trái (Tây Nam)
-  [109.46917, 23.39237], // Góc trên phải (Đông Bắc)
+  [100.0, 5.0], // Nới rộng biên giới một chút để tránh khóa zoom
+  [112.0, 25.0], // Góc trên phải (Đông Bắc)
 ];
 
 const map = new mapboxgl.Map({
