@@ -479,7 +479,7 @@ map.on("load", () => {
   }
 
   map.loadImage(
-    "https://map-hcmussh.github.io/chiendichhcm/static/media/ddl1.b4f2038e773265cc8376.png",
+    "./Asset/IMG/dinh_doc_lap.png",
     function (error, image) {
       if (error) throw error;
       map.addImage("sg-icon", image);
